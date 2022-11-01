@@ -5,7 +5,7 @@ import { Loader } from '../components/Loader/Loader';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Wrapper } from './Movies.styled';
-export const Movies = () => {
+const Movies = () => {
   const [searchParams, setSearchParams] = useSearchParams({});
   const query = searchParams.get('query') ?? '';
   const [searchQuery, setSearchQuery] = useState(query);
@@ -80,3 +80,4 @@ export const Movies = () => {
     </Wrapper>
   );
 };
+export default Movies;

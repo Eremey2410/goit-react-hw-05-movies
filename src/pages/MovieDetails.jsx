@@ -8,9 +8,9 @@ import {
   NavLink,
   Link,
 } from 'react-router-dom';
-import { useState, useEffect, Suspense } from 'react';
+import { useState, useEffect } from 'react';
 
-export const MovieDetails = () => {
+const MovieDetails = () => {
   const { movieId } = useParams();
   const [filmId, setFilmId] = useState(null);
   const [isLoad, setIsLoad] = useState(false);
@@ -89,9 +89,8 @@ export const MovieDetails = () => {
           </li>
         </ul>
       </section>
-      <Suspense fallback={<div>Loading subpage...</div>}>
-        <Outlet />
-      </Suspense>
+      <Outlet />
     </div>
   );
 };
+export default MovieDetails;
