@@ -8,7 +8,7 @@ import {
   NavLink,
   Link,
 } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 
 const MovieDetails = () => {
   const { movieId } = useParams();
@@ -89,7 +89,9 @@ const MovieDetails = () => {
           </li>
         </ul>
       </section>
-      <Outlet />
+      <Suspense fallback={<div>Loading subpage...</div>}>
+        <Outlet />
+      </Suspense>
     </div>
   );
 };
